@@ -23,6 +23,9 @@ let candidateName = input.question("What is your name? ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+  /*Okay, my big problem is with this one, 1.2b. I feel like I'm not correct here
+  Also, even if I am correct here, I do not understand the "why". It seemed like a reasonable way
+  to structure it but something about it doesn't seem right. I have struggled with readline-sync.*/
 let question = candidateAnswer; 
 candidateAnswer = input.question(question);
  
@@ -32,7 +35,10 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-
+if (candidateAnswer == "Sally Ride. ") 
+    console.log("Correct"); 
+  else if (candidateAnswer != "Sally Ride. ")
+    console.log("Incorrect");
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
