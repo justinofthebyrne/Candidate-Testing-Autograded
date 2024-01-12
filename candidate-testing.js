@@ -3,7 +3,7 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName = "Cybele Rose";
+let candidateName = " ";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
@@ -18,27 +18,30 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-let candidateName = input.question("What is your name? ");
+candidateName = input.question("What is your name? ");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  /*Okay, my big problem is with this one, 1.2b. I feel like I'm not correct here
-  Also, even if I am correct here, I do not understand the "why". It seemed like a reasonable way
-  to structure it but something about it doesn't seem right. I have struggled with readline-sync.*/
-let question = candidateAnswer; 
+  /* I did not need the rest of that stuff I had below. Simply put, the candidate's input to the question will be stored in 
+  candidateAnswer.*/
+ 
 candidateAnswer = input.question(question);
  
 }
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly.//
+  /*Keep it simple. If the candidate's answer is strictly equal to the correct answer, print "correct". 
+  If not (else) print "incorrect." Don't over complicate things*/ 
 
-if (candidateAnswer == "Sally Ride. ") 
+if (candidateAnswer === correctAnswer) {
     console.log("Correct"); 
-  else if (candidateAnswer != "Sally Ride. ")
+} else { 
     console.log("Incorrect");
+}
+
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
@@ -49,7 +52,7 @@ if (candidateAnswer == "Sally Ride. ")
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello, Cybele Rose!");
+   console.log("Hello!" + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
