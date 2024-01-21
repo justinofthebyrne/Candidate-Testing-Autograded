@@ -41,12 +41,11 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly.//
-  /*Keep it simple. If the candidate's answer is strictly equal to the correct answer, print "correct". 
-  If not (else) print "incorrect." Don't over complicate things*/ 
+  
 
 for (let i = 0; i < questions.length; i++) {
   console.log(`Your answer: ${candidateAnswers [i]}`);
-  console.log(`Correct answer: ${correctAnswers [i]}`);
+  console.log(`The correct answer is: ${correctAnswers [i]}`);
 }
 
 
@@ -59,7 +58,7 @@ for (let i = 0; i < questions.length; i++) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello!" + candidateName);
+  console.log("Hello!" + candidateName);
   askQuestion()
   gradeQuiz(this.candidateAnswers);
 }
