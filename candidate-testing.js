@@ -11,14 +11,13 @@ let candidateAnswer = "";
 
 
 //TODO: Variables for Part 2
-let questions = [
-"Who was the first American woman in space?", 
-"True or false: 5 kilometers === 5000 meters?", 
-"(5+3)/2 * 10 = ?", 
-"Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", 
-"What is the minimum crew size for the ISS?" ];
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3" ]; 
-let candidateAnswers = "";  
+let questions = ["Who was the first American woman in space? ", 
+"True or false: 5 kilometers === 5000 meters? ", 
+"(5+3)/2 * 10 = ? ", 
+"Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 
+"What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"]; 
+let candidateAnswers = [];  
 
 
 function askForName() {
@@ -30,14 +29,12 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   /* I did not need the rest of that stuff I had below. Simply put, the candidate's input to the question will be stored in 
   candidateAnswer.*/
+
+  for (let i = 0; i < questions.length; i++) {
+  candidateAnswers.push(input.question(questions [i]));
    
-candidateAnswer = input.question(question); 
-  if (candidateAnswer === correctAnswer) {
-    console.log("Correct"); 
-} else { 
-    console.log("Incorrect");
-    console.log(`correct answer: ${correctAnswer}`);
-}
+   }
+ 
 
 
 }
@@ -47,10 +44,9 @@ function gradeQuiz(candidateAnswers) {
   /*Keep it simple. If the candidate's answer is strictly equal to the correct answer, print "correct". 
   If not (else) print "incorrect." Don't over complicate things*/ 
 
-if (candidateAnswer === correctAnswer) {
-    console.log("Correct"); 
-} else { 
-    console.log("Incorrect");
+for (let i = 0; i < questions.length; i++) {
+  console.log(`Your answer: ${candidateAnswers [i]}`);
+  console.log(`Correct answer: ${correctAnswers [i]}`);
 }
 
 
@@ -64,16 +60,7 @@ function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
    console.log("Hello!" + candidateName);
-
-   for (let i = 0; i < questions.length; i++) {
-    question = questions [i]
-    correctAnswer = correctAnswers [i]
-    askQuestion();
-   }
-
-
-
-  
+  askQuestion()
   gradeQuiz(this.candidateAnswers);
 }
 
