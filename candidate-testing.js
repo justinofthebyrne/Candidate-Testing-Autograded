@@ -44,7 +44,9 @@ function gradeQuiz(candidateAnswers) {
   
 
 for (let i = 0; i < questions.length; i++) {
+  console.log(questions [i]); 
   console.log(`Your answer: ${candidateAnswers [i]}`);
+  
   console.log(`The correct answer is: ${correctAnswers [i]}`);
 }
 
