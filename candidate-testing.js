@@ -31,6 +31,7 @@ function askQuestion() {
   candidateAnswer.*/
 
   for (let i = 0; i < questions.length; i++) {
+  correctAnswers.toLowerCase === candidateAnswers.toLowerCase;
   candidateAnswers.push(input.question(questions [i]));
    
    }
@@ -49,13 +50,27 @@ for (let i = 0; i < questions.length; i++) {
   
   console.log(`The correct answer is: ${correctAnswers [i]}`);
 }
-
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
-  return grade;
 }
+
+  //TODO 3.2 use this variable to calculate the candidates score.
+
+  function grade(correctAnswers, questions) {
+    let grade = correctAnswers(Number) / questions(5) * 100
+
+    if (correctAnswers >= 4) {
+      console.log("You Pass!");
+    }else{
+      console.log("You fail");
+    }
+    return grade;
+  }
+    console.log(grade);
+ 
+  
+  
+ 
+
+
 
 function runProgram() {
   askForName();
