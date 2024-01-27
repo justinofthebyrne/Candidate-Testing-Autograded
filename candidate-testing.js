@@ -11,18 +11,18 @@ let candidateAnswer = "";
 
 
 //TODO: Variables for Part 2
-let questions = ["Who was the first American woman in space? ", 
-                "True or false: 5 kilometer == 5000 meters? ", 
-                "(5 + 3)/2 * 10 = ? ",
-                "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
-                "What is the minimum crew size for the ISS? "];
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"]; 
-let candidateAnswers = [];  
+let questions = ["Who was the first American woman in space? ",
+  "True or false: 5 kilometer == 5000 meters? ",
+  "(5 + 3)/2 * 10 = ? ",
+  "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
+  "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+let candidateAnswers = [];
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-candidateName = input.question("What is your name? ");
+  candidateName = input.question("What is your name? ");
 }
 
 function askQuestion() {
@@ -31,45 +31,40 @@ function askQuestion() {
   candidateAnswer.*/
 
   for (let i = 0; i < questions.length; i++) {
-  correctAnswers.toLowerCase === candidateAnswers.toLowerCase;
-  candidateAnswers.push(input.question(questions [i]));
-   
-   }
- 
+
+    candidateAnswers.push(input.question(questions[i]));
+
+  }
+
 
 
 }
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly.//
-  
 
-for (let i = 0; i < questions.length; i++) {
-  console.log(questions [i]); 
-  console.log(`Your answer: ${candidateAnswers [i]}`);
-  
-  console.log(`The correct answer is: ${correctAnswers [i]}`);
-}
-}
+  let numberCorrect = 0;
+  for (let i = 0; i < questions.length; i++) {
+    if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
+      numberCorrect += 1;
+    } else {
 
-  //TODO 3.2 use this variable to calculate the candidates score.
-
-  function grade(correctAnswers, questions) {
-    let grade = correctAnswers(Number) / questions(5) * 100
-
-    if (correctAnswers >= 4) {
-      console.log("You Pass!");
-    }else{
-      console.log("You fail");
     }
-    return grade;
+    console.log(questions[i]);
+    console.log(`Your answer: ${candidateAnswers[i]}`);
+    console.log(`The correct answer is: ${correctAnswers[i]}`);
   }
-    console.log(grade);
- 
-  
-  
- 
 
+  let grade = numberCorrect / questions.length * 100
+  if (numberCorrect >= 4) { //Cannot hard code 4 (don't do it). P would change this to 80% that doesn't change. Since we're doing 100. So we'd change this to grade >= 80 if going with percentage//
+    console.log(`Congratulations! Your grade is ${grade} and have passed!`);
+  } else {
+    console.log(`We are sorry. Your grade is ${grade} and you have not passed.`);
+  }
+  return grade;
+}
+
+//TODO 3.2 use this variable to calculate the candidates score.
 
 
 function runProgram() {
